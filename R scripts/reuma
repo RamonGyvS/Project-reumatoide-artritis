@@ -1,1 +1,216 @@
+setwd("C:/Users/Startklaar/OneDrive/Bureaublad/school/school jaar 2/R/R per 3 en 4/Transcriptonics P4/Reuma/")
+getwd(
 
+install.packages('BiocManager')
+BiocManager::install('Rsubread')
+
+install.packages("BiocManager")
+BiocManager::install("Rsubread")
+BiocManager::install("Rsamtools")
+BiocManager::install("DESeq2")
+BiocManager::install("KEGGREST")
+BiocManager::install("EnhancedVolcano")
+BiocManager::install("pathview")
+BiocManager::install("goseq")
+BiocManager::install("geneLenDataBase")
+BiocManager::install("org.Hs.eg.db")
+BiocManager::install("pheatmap")
+# Voor clusterProfiler
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("clusterProfiler")
+# Voor goseq
+BiocManager::install("goseq")
+
+library("pheatmap")
+library("pathview")
+library("readr")
+library("dplyr")
+library("Rsubread")
+library("Rsamtools")
+library("DESeq2")
+library("KEGGREST")
+library("EnhancedVolcano")
+library("clusterProfiler")
+library("goseq")
+library("geneLenDataBase")
+library("org.Hs.eg.db")
+
+buildindex(
+  basename = 'Ref_human',
+  reference = 'ecoli data sets/Human reefgen/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna',
+  memory = 4000,
+  indexSplit = TRUE)
+
+align.contrl1 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785819_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785819_2_subset40k.fastq",
+                    output_file = "contrl1.BAM")
+
+align.contrl2 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785820_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785820_2_subset40k.fastq",
+                    output_file = "contrl2.BAM")
+
+align.contrl3 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785828_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785828_2_subset40k.fastq",
+                    output_file = "contrl3.BAM")
+
+align.contrl4 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785831_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785831_2_subset40k.fastq",
+                    output_file = "contrl4.BAM")
+
+align.sample1 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785979_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785979_2_subset40k.fastq",
+                    output_file = "sample1.BAM")
+
+align.sample2 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785980_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785980_2_subset40k.fastq",
+                    output_file = "sample2.BAM")
+
+align.sample3 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785986_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785986_2_subset40k.fastq",
+                    output_file = "sample3.BAM")
+
+align.sample4 <- align(index = "Ref_human",
+                    readfile1 = "Reuma/Data_RA_raw/SRR4785988_1_subset40k.fastq",
+                    readfile2 = "Reuma/Data_RA_raw/SRR4785988_2_subset40k.fastq",
+                    output_file = "sample4.BAM")
+
+# BAM-bestanden sorteren en indexeren
+samples <- c("contrl1", "contrl2", "contrl3", "contrl4", "sample1", "sample2", "sample3", "sample4")
+
+lapply(samples, function(s) {sortBam(file = paste0(s, '.BAM'), destination = paste0(s, '.sorted'))})
+lapply(samples, function(s) {indexBam(paste0(s, '.sorted.bam'))})
+
+# Lijst van alle BAM-bestanden
+allsamples <- c("contrl1.BAM", "contrl2.BAM", "contrl3.BAM", "contrl4.BAM", "sample1.BAM", "sample2.BAM", "sample3.BAM", "sample4.BAM" )
+
+# Header-informatie uit een BAM-bestand halen
+hdr <- scanBamHeader("sample4.bam")
+names(hdr[[1]]$targets)
+
+# Gen tellingen uitvoeren met featureCounts
+count_matrix <- featureCounts(
+  files = allsamples,
+  annot.ext = "count matrix/GCF_000001405.40_GRCh38.p14_genomic.gtf",
+  isPairedEnd = TRUE,
+  isGTFAnnotationFile = TRUE,
+  GTF.attrType = "gene_id",
+  useMetaFeatures = TRUE,
+)
+
+# Bekijk annotaties en tellingen
+head(count_matrix$annotation)
+head(count_matrix$counts)
+str(count_matrix)
+
+# Inladen van tellingen uit bestand
+counts <- data.table::fread('C:/Users/Startklaar/OneDrive/Bureaublad/school/school jaar 2/R/R per 3 en 4/Transcriptonics P4/count matrix/goede count matrix/count_matrix.txt')
+
+# Kolomnamen instellen
+colnames(counts) <- c("Gene name", "contrl1", "contrl2", "contrl3", "contrl4", "sample1", "sample2", "sample3", "sample4")
+
+# Wegschrijven als CSV en opnieuw inladen
+write.csv(counts, "countmatrix.csv")
+counts <- read.csv("countmatrix.csv", row.names = 1)
+str(counts)
+
+# Zet genennamen als rownames en verwijder kolom
+rownames(counts) <- counts$Gene.name
+counts$Gene.name <- NULL
+
+# Metadata per sample aanmaken
+fileType <- c("control", "control", "control", "control", "sample", "sample", "sample", "sample")
+typeTable <- data.frame(fileType)
+rownames(typeTable) <- c("contrl1", "contrl2", "contrl3", "contrl4", "sample1", "sample2", "sample3", "sample4")
+
+# DESeq2 object aanmaken
+dds <- DESeqDataSetFromMatrix(countData = round(counts),
+                              colData = typeTable,
+                              design = ~ fileType)
+
+# Differential expressie analyse uitvoeren
+dds <- DESeq(dds)
+resultaat <- results(dds)
+
+# Resultaten opslaan
+write.table(resultaat, file = "ResultatenProjectReuma.csv", row.names = TRUE, col.names = TRUE)
+
+# Aantal genen tellen met significante expressieverschillen
+sum(resultaat$padj < 0.05 & resultaat$log2FoldChange > 1, na.rm = TRUE)
+sum(resultaat$padj < 0.05 & resultaat$log2FoldChange < -1, na.rm = TRUE)
+
+# Ordenen van resultaten
+hoogste_fold_change <- resultaat[order(resultaat$log2FoldChange, decreasing = TRUE), ]
+laagste_fold_change <- resultaat[order(resultaat$log2FoldChange, decreasing = FALSE), ]
+laagste_p_waarde <- resultaat[order(resultaat$padj, decreasing = FALSE), ]
+
+# Volcano plot maken van resultaten
+EnhancedVolcano(resultaat,
+                lab = rownames(resultaat),
+                x = "log2FoldChange",
+                y = "padj",
+                col = c("blue2", "salmon", "red4", "darkolivegreen4"),
+                colAlpha = 0.6)
+
+# Voor Pathview: genvector aanmaken met log2FoldChange en gennamen
+gene_vector <- resultaat$log2FoldChange
+names(gene_vector) <- rownames(resultaat)
+
+# Pathway visualiseren met Pathview
+pathview(
+  gene.data = gene_vector,
+  pathway.id = "04064",
+  species = "hsa",        
+  gene.idtype = "SYMBOL",
+  limit = list(gene = 5))
+
+keggGet("hsa05200")[[1]]$NAME
+
+# Mapping van genennamen naar Entrez-ID
+entrez_ids <- mapIds(org.Hs.eg.db,
+                     keys = rownames(resultaat),
+                     keytype = "SYMBOL",
+                     column = "ENTREZID")
+
+# Alleen geldige Entrez-ID’s behouden
+entrez_ids <- entrez_ids[!is.na(entrez_ids)]
+
+# Filteren op significante genen (padj < 0.05 en |log2FC| > 1)
+sig_genes <- resultaat[rownames(resultaat) %in% names(entrez_ids), ]
+sig_genes <- sig_genes$padj < 0.05 & abs(sig_genes$log2FoldChange) > 1
+
+# KEGG-enrichment analyse uitvoeren
+ekegg <- enrichKEGG(
+  gene = entrez_ids[sig_genes], 
+  organism = 'hsa',                
+  universe = NULL,             
+)
+
+# Dotplot voor KEGG-termen
+dotplot(ekegg, showCategory = 15) +  
+  ggtitle("KEGG Enrichment Analysis") +
+  theme(axis.text.y = element_text(size = 8))
+
+# Barplot voor top KEGG-termen
+barplot(ekegg, showCategory = 15) +  
+  ggtitle("Top KEGG Terms") +
+  theme(axis.text.y = element_text(size = 8))
+
+# Heatmap voor top 50 genen
+vsd <- vst(dds, blind = TRUE)
+top_genes <- head(order(resultaat$padj), 50)
+heatmap_data <- assay(vsd)[top_genes,]
+
+pheatmap(heatmap_data,
+         cluster_rows = TRUE,
+         cluster_cols = TRUE,
+         scale = "row",
+         main = "Top 50 genen (VST)",
+         color = colorRampPalette(c("navy", "white", "firebrick"))(50))
