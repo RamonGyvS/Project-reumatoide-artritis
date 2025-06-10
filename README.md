@@ -14,6 +14,6 @@ bla bla bla
 # 4. Discussie
 bla bla bla
 
-# 4. Conclusie
+# 5. Conclusie
 bla bla bla
 
