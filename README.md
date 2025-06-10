@@ -7,3 +7,10 @@ Hoewel de exacte etiologie van RA nog niet volledig is opgehelderd, wijst onderz
 
 # 2. Materiaal en Methode
 bla bla bla
+
+# 3. Discussie
+bla bla bla
+
+# 4. Conclusie
+bla bla bla
+
