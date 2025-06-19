@@ -6,7 +6,7 @@ Reumatoïde artritis (RA) is een chronische ontstekingsziekte. Het valt onder de
 Hoewel de exacte etiologie van RA nog niet volledig is opgehelderd, wijst onderzoek op een complexe interactie tussen genetische aanleg (zoals *HLA-DRB1*-allelen), omgevingsfactoren (bijvoorbeeld roken) en auto-immuunreacties tegen gecitrullineerde peptiden (ACPA/anti-CCP) (Radu & Bungau, 2021). Een vroege diagnose en interventie zijn cruciaal om progressieve gewrichtsbeschadiging te remmen, maar de heterogeniteit van RA bemoeilijkt de identificatie van betrouwbare biomerkers (Majithia & Geraci, 2007). 
 
 # 2. Materiaal en methode
-bla bla bla
+Voor dit project zijn een aantal R-pakketten gebruikt voor de verwerking van data en statistische analyses. Voor het laten zien van de top 50 genen in een cluster heatmap is pheatmap gebruikt. Om de KEGG route hsa04064 te visualiseren is het pakket pathview gebruikt. Het lezen en manipuleren van data is gedaan met readr en dplyr. De reads alignen en tellen op gen-niveau is met Rsubread uitgevoerd. Het sorteren en indexeren van BAM-bestanden is met Rsamtools gedaan. DESeq2 heeft het differentieel expressie onderzoek gedaan. KEGGREST was voor de weg naar de pathway informatie. EnhancedVolcano is gebruikt voor het maken van volcano-plots. ClusterProfiler is gebruikt bij het KEGG verrijkings onderzoek. Daarnaast zijn goseq en geneLenDataBase gebruikt om het GO verrijkings onderzoek opnieuw met gene length bias correctie uit te voeren. Ook is org.Hs.eg.db gebruikt om tussen gen symbolen en ENTREZ ID’s te converteren. 
 
 # 3. Resultaten
 bla bla bla
