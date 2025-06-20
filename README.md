@@ -19,10 +19,16 @@ Voor het visualiseren van de genen zijn 3 verschillende plots gebruikt. Volcano 
 
 
 # 3. Result
-In de volcano plot is te zien dat er een aantal genen sterk up gereguleerde zijn, namelijk de genen: SRGN, PTGFR en BCL2A1. Genen die sterk down gereguleerd zijn
+In de [volcano plot](./resultaten/R%20figuur%20volcano%20plot.png) zijn de genen met de hoogste log2 fold change te zien, dit zijn COL6A5, IGKV1-39, SRGN, BCL2A1 en PTGFR. Laag gereguleerde genen zijn MXRA7P1, IKBKGP1, MT-ND6 en ANKRD30BL.
+
+Daarnaast toont de KEGG E analyse dat meerder pathways significante naar boven kwamen, dit waren MAPK signaling pathway, Epstein Barr virus, Lipid en atheroscerosis en NOD like receptor signaling pathway. 
 
 # 4. Conclusie/discussie
 Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expressie komen in personen met Reumatoïde artritis, en welke metabole routes hierbij anders functioneren.
+
+In het Volcano plot zijn SRGN, BCL2A1 en PTGFR gevonden als up-regulated genen, ook zijn deze vaak upregulated bij een onsteking in het lichaam. 
+
+Als verbetering voor de volgende keer 
 
 
 
