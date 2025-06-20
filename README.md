@@ -17,8 +17,8 @@ Voor het visualiseren van de genen zijn 4 verschillende plots gebruikt. Volcano 
 Clustering toont patronen en mogelijke groepen van genen die samen gereguleerd zijn. 
 Top 50 KEGG term plot: Deze grafiek toont de top KEGG terms/biologische pathways die geassocieerd zijn met de genen van patiënten met reuma. Y-as geeft significante pathways aan zoals de TNF signaling pathway, IL-17 signaling pathway, en "Rheumatoid arthritis. X-as geeft significantie aan (lengte = -log10(p-waarde)), waarbij langere balken een sterker verband aangeven. 
 
-# 3. Resultaten
-In de grafiek volcano plot is te zien dat er een aantal genen sterk up gereguleerde zijn, namelijk de genen: BCL2A1 
+# 3. Result
+In de volcano plot is te zien dat er een aantal genen sterk up gereguleerde zijn, namelijk de genen: SRGN, PTGFR en BCL2A1. Genen die 
 
 # 4. Conclusie/discussie
 Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expressie komen in personen met Reumatoïde artritis, en welke metabole routes hierbij anders functioneren.
