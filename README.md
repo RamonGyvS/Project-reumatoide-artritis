@@ -1,7 +1,7 @@
 # Project-reumatoide-artritis
 Project transcriptomics over reumatoide artritis, jaar 2 periode 4.
 
-#Inhoud
+# Inhoud
 1. Inleiding
 2. Materiaal en methode
 3. Resutaten
