@@ -21,16 +21,13 @@ Voor het visualiseren van de genen zijn 3 verschillende plots gebruikt. Volcano 
 # 3. Result
 In de [volcano plot](./resultaten/R%20figuur%20volcano%20plot.png) zijn de genen met de hoogste log2 fold change te zien, dit zijn COL6A5, IGKV1-39, SRGN, BCL2A1 en PTGFR. Laag gereguleerde genen zijn MXRA7P1, IKBKGP1, MT-ND6 en ANKRD30BL.
 
-Daarnaast toonen de [KEGG E analyse](./resultaten/R%20KEGG%20E%20analyse.png) en [top KEGG termen](./resultaten/R%20top%20KEGG%20term.png)
-
- dat meerder pathways significante naar boven kwamen, dit waren MAPK signaling pathway, Epstein Barr virus, Lipid en atheroscerosis en NOD like receptor signaling pathway. 
+Daarnaast toonen de [KEGG E analyse](./resultaten/R%20KEGG%20E%20analyse.png) en [top KEGG termen](./resultaten/R%20top%20KEGG%20term.png) dat meerdere pathways significante naar boven kwamen, dit waren MAPK signaling pathway, Epstein Barr virus, Lipid en atheroscerosis en NOD like receptor signaling pathway.
 
 # 4. Conclusie/discussie
-Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expressie komen in personen met Reumatoïde artritis, en welke metabole routes hierbij anders functioneren.
+Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expressie komen in personen met Reumatoïde artritis, en welke metabole routes hierbij anders functioneren. 
 
-In het Volcano plot zijn SRGN, BCL2A1 en PTGFR gevonden als up-regulated genen, ook zijn deze vaak upregulated bij een onsteking in het lichaam. 
-
-Als verbetering voor de volgende keer 
+Tijdens onderzoeken naar reumatoïde artritis werden meerdere genen gevonden die in RA-patiënten versterkte expressie vertoonde. In het Volcano plot zijn SRGN, BCL2A1 en PTGFR gevonden als up-regulated genen. PTGDS speelt een rol bij de productie van prostaglandine D2 wat betrokken is bij ontstekingsreacties. De verhoogde expressie van PTGDS in het synoviale weefsel van RA-patiënten wijst op een mogelijke bijdrage aan de ontstekingsprocessen die kenmerkend zijn voor deze ziekte(Ungethuem, 2010). 
+Als verbetering voor het onderzoek word aangeraden om de patiënten beter te gereguleren. De data bestaat niet uit groepen, bijvoorbeeld: mensen boven de 60 jaar, vrouwen, mannen, of mensen met een familie lid met RA (ervelijkheid). Er wordt ook aangeraden om met meer data te werken om de significatie van het ondezoek te verhogen.
 
 
 
