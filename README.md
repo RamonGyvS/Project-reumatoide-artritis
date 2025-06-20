@@ -21,7 +21,8 @@ Voor het visualiseren van de genen zijn 3 verschillende plots gebruikt. Volcano 
 # 3. Result
 In de [volcano plot](./resultaten/R%20figuur%20volcano%20plot.png) zijn de genen met de hoogste log2 fold change te zien, dit zijn COL6A5, IGKV1-39, SRGN, BCL2A1 en PTGFR. Laag gereguleerde genen zijn MXRA7P1, IKBKGP1, MT-ND6 en ANKRD30BL.
 
-Daarnaast toont de [KEGG E analyse](./resultaten/R%20KEGG%20E%20analyse.png)
+Daarnaast toonen de [KEGG E analyse](./resultaten/R%20KEGG%20E%20analyse.png) en [top KEGG termen](./resultaten/R%20top%20KEGG%20term.png)
+
  dat meerder pathways significante naar boven kwamen, dit waren MAPK signaling pathway, Epstein Barr virus, Lipid en atheroscerosis en NOD like receptor signaling pathway. 
 
 # 4. Conclusie/discussie
