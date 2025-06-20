@@ -26,7 +26,7 @@ Daarnaast toonen de [KEGG E analyse](./resultaten/R%20KEGG%20E%20analyse.png) en
 # 4. Conclusie/discussie
 Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expressie komen in personen met Reumatoïde artritis, en welke metabole routes hierbij anders functioneren. 
 
-Tijdens onderzoeken naar reumatoïde artritis werden meerdere genen gevonden die in RA-patiënten versterkte expressie vertoonde. In het Volcano plot zijn SRGN, BCL2A1 en PTGFR gevonden als up-regulated genen. PTGDS speelt een rol bij de productie van prostaglandine D2 wat betrokken is bij ontstekingsreacties. De verhoogde expressie van PTGDS in het synoviale weefsel van RA-patiënten wijst op een mogelijke bijdrage aan de ontstekingsprocessen die kenmerkend zijn voor deze ziekte(Ungethuem, 2010). 
+Tijdens onderzoeken naar reumatoïde artritis werden meerdere genen gevonden die in RA patiënten versterkte expressie vertoonde. In het Volcano plot zijn SRGN, BCL2A1 en PTGFR gevonden als up-regulated genen. PTGDS zorgt voor de productie van prostaglandine D2, wat betrokken is bij ontstekingsreacties. De verhoogde expressie van PTGDS wijst erop dat het mogelijk kan meewerken aan chronische ontstekingen. Dit is kenmerkend voor RA en kan een verband zijn. Mogelijk kan PTGDS gerbuikt worden als moleculaire biomarker om vervroegd RA te identificeren (Ungethuem, 2010).  
 Als verbetering voor het onderzoek word aangeraden om de patiënten beter te gereguleren. De data bestaat niet uit groepen, bijvoorbeeld: mensen boven de 60 jaar, vrouwen, mannen, of mensen met een familie lid met RA (ervelijkheid). Er wordt ook aangeraden om met meer data te werken om de significatie van het ondezoek te verhogen.
 
 
