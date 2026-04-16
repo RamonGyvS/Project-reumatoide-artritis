@@ -23,6 +23,12 @@ In de [volcano plot](./resultaten/R%20figuur%20volcano%20plot.png) zijn de genen
 
 Daarnaast toonen de [KEGG E analyse](./resultaten/R%20KEGG%20E%20analyse.png) en [top KEGG termen](./resultaten/R%20top%20KEGG%20term.png) dat meerdere pathways significante naar boven kwamen, dit waren MAPK signaling pathway, Epstein Barr virus, Lipid en atheroscerosis en NOD like receptor signaling pathway.
 
+---
+In het volcano plot (Figuur 1) vallen de genen met de grootste log2 fold change op. De meest opgereguleerde genen zijn COL6A5, IGKV1-39, SRGN, BCL2A1 en PTGFR, terwijl MXRA7P1, IKBKGP1, MT-ND6 en ANKRD30BL juist neerwaarts gereguleerd zijn. Het gaat hierbij om genen met een significant verschil in expressie tussen patiënten met reumatoïde artritis en controles.
+Ook laten de KEGG-analyse en top KEGG-termen zien dat meerdere biologische pathways significant verrijkt zijn. Belangrijkste pathways zijn daarbij de MAPK signaling pathway, Epstein-Barr virus pathway, lipid and atherosclerosis pathway en de NOD-like receptor signaling pathway. Deze pathways zijn vooral betrokken bij immuunreacties en inflammatoire processen, en sluiten daarmee aan bij het ziektebeeld van reumatoïde artritis.
+Op vallend is dat PTGDS hogere expressie vertoont. Dit gen is betrokken bij ontstekingsprocessen, en daarom interessant voor verder onderzoek in deze studie.
+---
+
 # 4. Conclusie/discussie
 Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expressie komen in personen met Reumatoïde artritis, en welke metabole routes hierbij anders functioneren. 
 
