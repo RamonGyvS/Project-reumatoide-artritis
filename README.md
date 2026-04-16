@@ -37,7 +37,7 @@ en de top KEGG termen:
 
 zien dat meerdere biologische pathways significant verrijkt zijn. Belangrijke pathways zijn hierbij de MAPK signaling pathway, Epstein-Barr virus pathway, lipid and atherosclerosis pathway en de NOD-like receptor signaling pathway. Deze pathways zijn vooral betrokken bij immuunreacties en inflammatoire processen en passen bij het ziektebeeld van reumatoïde artritis.
 
-Opvallend is dat *PTGDS* hogere expressie vertoont. Dit gen is betrokken bij ontstekingsprocessen en is daarom interessant voor verder onderzoek in deze studie.
+Opvallend is dat *PTGDS* hogere expressie vertoont. Dit gen is betrokken bij ontstekingsprocessen en is daarom interessant voor verder onderzoek.
 
 # 4. Conclusie/discussie
 In dit onderzoek is gekeken naar welke genen verschillend tot expressie komen bij patiënten met reumatoïde artritis en welke biologische pathways daarbij betrokken zijn. De resultaten laten zien dat meerdere genen, waaronder *SRGN*, *BCL2A1* en *PTGFR*, verhoogd tot expressie komen bij RA-patiënten.
