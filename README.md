@@ -14,23 +14,33 @@ Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expres
 # 2. Materiaal en methode
 Voor dit project zijn een aantal R-pakketten gebruikt voor de verwerking van data en statistische analyses. Om de KEGG route hsa04064 te visualiseren is het pakket pathview gebruikt. Het lezen en manipuleren van data is gedaan met readr en dplyr. De reads alignen en tellen op gen-niveau is met Rsubread uitgevoerd. Het sorteren en indexeren van BAM-bestanden is met Rsamtools gedaan. DESeq2 heeft het differentieel expressie onderzoek gedaan. KEGGREST was voor de weg naar de pathway informatie. EnhancedVolcano is gebruikt voor het maken van volcano-plots. ClusterProfiler is gebruikt bij het KEGG verrijkings onderzoek. Daarnaast zijn goseq en geneLenDataBase gebruikt om het GO verrijkings onderzoek opnieuw met gene length bias correctie uit te voeren. Ook is org.Hs.eg.db gebruikt om tussen gen symbolen en ENTREZ ID’s te converteren.
 Voor het visualiseren van de genen zijn 3 verschillende plots gebruikt. Volcano plot: Op de x-as staat de log₂ fold change, en op de y-as de -log₁₀P. Groene punten zijn genen die zowel statistisch significant als sterk gereguleerd zijn. KEGG Enrichment Analysis: De x-as toont de verhouding van betrokken genen. Kleur geeft de significantie aan, en de grootte het aantal betrokken genen. Top 50 KEGG term plot: Deze grafiek toont de top KEGG terms/biologische pathways die geassocieerd zijn met de genen van patiënten met reuma. Y-as geeft significante pathways aan zoals de TNF signaling pathway, IL-17 signaling pathway, en "Rheumatoid arthritis. X-as geeft significantie aan (lengte = -log10P, waarbij langere balken een sterker verband aangeven. Hieronder een flowchart van het werkproces van dit onderzoek.
-![Flowchart](Flowchart/Flowchart%20R%20Reuma.png)
 
+<img src="Flowchart/Flowchart%20R%20Reuma.png" width="750">
 
+# 3. Resultaten
+In de volcano plot:
 
-# 3. Resultaat
-In het volcano plot [volcano plot](./resultaten/R%20figuur%20volcano%20plot.png) vallen de genen met de grootste log2 fold change op. De meest opgereguleerde genen zijn COL6A5, IGKV1-39, SRGN, BCL2A1 en PTGFR, terwijl MXRA7P1, IKBKGP1, MT-ND6 en ANKRD30BL juist neerwaarts gereguleerd zijn. Het gaat hierbij om genen met een significant verschil in expressie tussen patiënten met reumatoïde artritis en controles.
+<img src="./resultaten/R%20figuur%20volcano%20plot.png" width="750">
 
-Ook laten de [KEGG E analyse](./resultaten/R%20KEGG%20E%20analyse.png) en [top KEGG termen](./resultaten/R%20top%20KEGG%20term.png) zien dat meerdere biologische pathways significant verrijkt zijn. Belangrijkste pathways zijn daarbij de MAPK signaling pathway, Epstein-Barr virus pathway, lipid and atherosclerosis pathway en de NOD-like receptor signaling pathway. Deze pathways zijn vooral betrokken bij immuunreacties en inflammatoire processen, en sluiten daarmee aan bij het ziektebeeld van reumatoïde artritis.
+vallen de genen met de grootste log2 fold change op. De meest upregulated genen zijn *COL6A5, IGKV1-39, SRGN, BCL2A1* en *PTGFR*, terwijl *MXRA7P1, IKBKGP1, MT-ND6* en *ANKRD30BL* downregulated zijn. Het gaat hierbij om genen met een significant verschil in expressie tussen patiënten met reumatoïde artritis en controles.
 
-Op vallend is dat PTGDS hogere expressie vertoont. Dit gen is betrokken bij ontstekingsprocessen, en daarom interessant voor verder onderzoek in deze studie.
+Ook laten de KEGG analyse:
+
+<img src="./resultaten/R%20KEGG%20E%20analyse.png" width="750">
+
+en de top KEGG termen:
+
+<img src="./resultaten/R%20top%20KEGG%20term.png" width="750">
+
+zien dat meerdere biologische pathways significant verrijkt zijn. Belangrijke pathways zijn hierbij de MAPK signaling pathway, Epstein-Barr virus pathway, lipid and atherosclerosis pathway en de NOD-like receptor signaling pathway. Deze pathways zijn vooral betrokken bij immuunreacties en inflammatoire processen en passen bij het ziektebeeld van reumatoïde artritis.
+
+Opvallend is dat *PTGDS* hogere expressie vertoont. Dit gen is betrokken bij ontstekingsprocessen en is daarom interessant voor verder onderzoek in deze studie.
 
 # 4. Conclusie/discussie
-Het doel van dit expiriment is: analyseren welke genen hoger of lager tot expressie komen in personen met Reumatoïde artritis, en welke metabole routes hierbij anders functioneren. 
+In dit onderzoek is gekeken naar welke genen verschillend tot expressie komen bij patiënten met reumatoïde artritis en welke biologische pathways daarbij betrokken zijn. De resultaten laten zien dat meerdere genen, waaronder SRGN, BCL2A1 en PTGFR, verhoogd tot expressie komen bij RA-patiënten.
+PTGDS valt hierbij op. Dit gen speelt een rol bij de productie van prostaglandine D2, een stof die betrokken is bij ontstekingsreacties. De verhoogde expressie van PTGDS kan erop wijzen dat het bijdraagt aan de chronische ontsteking die kenmerkend is voor reumatoïde artritis. Daarom zou PTGDS mogelijk gebruikt kunnen worden als biomarker om de ziekte in een vroeg stadium te herkennen (Ungethuem, 2010).
 
-Tijdens onderzoeken naar reumatoïde artritis werden meerdere genen gevonden die in RA patiënten versterkte expressie vertoonde. In het Volcano plot zijn SRGN, BCL2A1 en PTGFR gevonden als up-regulated genen. PTGDS zorgt voor de productie van prostaglandine D2, wat betrokken is bij ontstekingsreacties. De verhoogde expressie van PTGDS wijst erop dat het mogelijk kan meewerken aan chronische ontstekingen. Dit is kenmerkend voor RA en kan een verband zijn. Mogelijk kan PTGDS gerbuikt worden als moleculaire biomarker om vervroegd RA te identificeren (Ungethuem, 2010).  
-Als verbetering voor het onderzoek word aangeraden om de patiënten beter te gereguleren. De data bestaat niet uit groepen, bijvoorbeeld: mensen boven de 60 jaar, vrouwen, mannen, of mensen met een familie lid met RA (ervelijkheid). Er wordt ook aangeraden om met meer data te werken om de significatie van het ondezoek te verhogen.
-
-
+Het belangrijk om te benadrukken dat deze rol nog niet definitief is aangetoond en dat verdere validatie nodig is met betrekking tot PTGDS.
+Een beperking van deze studie is dat er geen onderscheid is gemaakt tussen verschillende patiëntgroepen, zoals leeftijd, geslacht of genetische achtergrond. Daarnaast zou een grotere steekproef de betrouwbaarheid en statistische hoeveelheid van de resultaten kunnen verhogen.
 
 
