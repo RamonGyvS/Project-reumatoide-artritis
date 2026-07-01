@@ -1,4 +1,4 @@
-# *PTGSD* gen als vroege biomarker voor het behandelen van reumatoïde artritis
+# *PTGDS* gen als vroege biomarker voor het behandelen van reumatoïde artritis
 
 # Inhoud
 1. Inleiding
